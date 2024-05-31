@@ -1,46 +1,31 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD con Express - Proyecto Final</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-
-
-
-<style>
-    #card-color
-    {
-                    background-color: rgb(5, 66, 117);
-
-    }
-</style>
-
-<main class="mt-5">
-    <div class="container" style="max-width: 500px; height: 450px;">
-        <div class="card mx-auto shadow-lg">
-            <div class="card-header text-center  text-white" id="card-color">
-                <i class="fa-solid fa-users card-img-top mx-auto m-2 rounded-circle" style="font-size: 150px; color: white;"></i>
-                <h3 class="text-uppercase p-4">Crud con Express Proyecto Final</h3>
-            </div>
-            <div class="card-body text-center">
-                <div class="mb-4">
-                    <h5>Instituto Tecnológico de Hermosillo</h5>
-                    <h5>Ingeniería en Sistemas Computacionales</h5>
-                    <h5>Andrea Alejandra Zapien Vázquez</h5>
-                </div>
-                <a href="/add" class="btn btn- btn-lg"  id="card-color" style="color: white;">Crear una Persona</a>
-            </div>
+<br>
+<br>
+<!-- Contenedor principal -->
+<div class="container">
+    <!-- Tarjeta 1 -->
+    <div class="card mx-auto" style="width: 900px;">
+        <div class="card-header bg-primary text-white">
+            <!-- Título centrado con clase de Bootstrap -->
+            <h5 class="card-title text-uppercase custom-letter-spacing mb-0">Bienvenido a la Gestión de Empleados</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">Utilice el menú de navegación para acceder a las diferentes secciones del sistema de gestión de empleados. Aquí puede crear nuevos empleados, buscar empleados existentes y gestionar toda la información relacionada.</p>
+            <p class="card-text">Si necesita ayuda, por favor, contacte con el administrador del sistema.</p>
+            <a href="/add" class="btn btn-outline-secondary btn-lg" id="card-color">Crear una Persona</a>
         </div>
     </div>
-</main>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-</body>
-</html>
+    <!-- Tarjeta 2 -->
+    <div class="card mx-auto mt-4" style="width: 900px;">
+        <div class="card-header bg-secondary text-white">
+            <!-- Título centrado con clase de Bootstrap -->
+            <h5 class="card-title text-uppercase custom-letter-spacing mb-0">Estadísticas rápidas</h5>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li>Número total de empleados: <span id="contadorEmpleados"></span></li>
+                <li>Nuevos empleados este mes: 5</li>
+                <li>Empleados activos: 115</li>
+            </ul>
+        </div>
+    </div>
+</div>

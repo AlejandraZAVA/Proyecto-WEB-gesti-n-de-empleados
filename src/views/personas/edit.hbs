@@ -1,145 +1,67 @@
 
+
+ <style>
     
-    
-    <style>
-        .menu {
-            background-color: rgb(5, 66, 117);
-            padding: 15px;
-            height: 100vh;
-            overflow-y: auto;
-            color: white;
-            border-right: 1px solid #dee2e6;
-        }
-        .navbar-custom {
-            background-color: #073155;
-            color: white;
-        }
-        .content {
-            padding: 20px;
-            opacity: 0.95;
-        }
-        .menu-header {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-        }
-        .menu-header i {
-            margin-right: 10px;
-        }
-        .menu-item, .menu-divider {
-            margin-bottom: 1rem;
-        }
-        .menu-link {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            padding: 10px 15px;
-            border-radius: 4px;
-        }
-        .menu-link:hover, .menu-link:focus {
-            background-color: rgba(255, 255, 255, 0.2);
-            text-decoration: none;
-            color: white;
-        }
-        .menu-link i {
-            margin-right: 10px;
-        }
-        .menu-submenu {
-            padding-left: 20px;
-        }
-        .menu-caret {
-            float: right;
-        }
-        .menu-divider {
-            border-top: 1px solid #dee2e6;
-        }
-        .button-right button {
-            margin-left: 10px;
-        }
-        #encabezado {
-            margin: 0;
-            padding: 0;
-            color: black;
-        }
-        #icono_usuario, #cerrar_sesion {
-            height: 20px;
-            width: 20px;
-        }
-        #navbar-brand {
-            margin-left: 200px;
-            color: #000000;
-            font-family: sans-serif;
-            font-size: 36px;
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .form-card {
-            background-color: rgb(5, 66, 117);
-            color: white;
-            border-radius: 10px;
+            margin-top: 2rem;
         }
-        .form-card .card-header {
-            background-color: #073155;
-            color: white;
-            border-bottom: none;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+        .card-header {
+            text-align: center;
         }
-        .form-card .input-group-text {
-            background-color: #073155;
-            color: white;
-            border: none;
-        }
-        .form-card .form-control {
-            border: 1px solid #073155;
-            color: #073155;
-        }
-        .form-card .btn-success {
-            background-color: #073155;
-            border: none;
-        }
-        .form-card .btn-success:hover {
-            background-color: #052843;
-        }
+       
     </style>
-
-
-        <div class="container-fluid p-4">
-        <div class="row">
-            <div class="col-md-10 col-sm-12 mx-auto" id="encabezado">
-                <div class="card form-card mt-5">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="text-uppercase text-center">Actualizar empleado</h5>
+</head>
+<body>
+    <div class="container-fluid p-4" id="formulario">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <div class="card form-card">
+                    <div class="card-header  text-black">
+                        <h5 class="text-uppercase">Crear empleado</h5>
                     </div>
                     <div class="card-body">
                         <form action="/edit/{{persona.id}}" method="post">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">Nombre:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            </div>
+                                            <input type="text" name="name" id="name"  value="{{persona.name}}" placeholder="Ingrese su nombre..." autofocus required class="form-control">
+                                        </div>
                                     </div>
-                                    <input type="text" name="name" id="name" value="{{persona.name}}" placeholder="Ingrese su nombre..." autofocus required class="form-control"> 
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="lastname">Apellidos:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            </div>
+                                            <input type="text" name="lastname"  value="{{persona.lastname}}"  id="lastname" placeholder="Ingrese sus apellidos..." required class="form-control">
+                                        </div>
                                     </div>
-                                    <input type="text" name="lastname" id="lastname"  value="{{persona.lastname}}" placeholder="Ingrese sus apellidos..." required class="form-control"> 
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="age">Edad:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                            </div>
+                                            <input type="number" name="age" id="age"   value="{{persona.age}}"placeholder="0" required class="form-control">
+                                        </div>
                                     </div>
-                                    <input type="number" name="age" id="age"  value="{{persona.age}}" placeholder="0" required class="form-control"> 
                                 </div>
-                            </div>
-                            <div class="form-group mt-4">
-                                <button class="btn btn-success btn-block">Guardar</button>
+                                <div class="col-md-12 mt-4">
+                                    <button class="btn btn-success btn-block">Guardar</button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -147,4 +69,3 @@
             </div>
         </div>
     </div>
-

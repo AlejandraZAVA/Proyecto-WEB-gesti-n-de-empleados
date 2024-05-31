@@ -15,6 +15,7 @@ router.post('/add', async(req, res)=>{
         }
         await pool.query('INSERT INTO personas SET ?', [newPersona]);
         res.redirect('/lista');
+        
     }
     catch(err){
         res.status(500).json({message:err.message});
